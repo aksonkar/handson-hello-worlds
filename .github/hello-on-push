@@ -1,0 +1,19 @@
+name: Hello on Push
+
+on:
+    push:
+        branches:
+            - main
+
+jobs:
+    hello:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Say Hello
+                run: echo "Hello, World! Push event triggered."
+            
+            - name: Print Event Details
+                run: |
+                    echo "Repository: ${{ github.repository }}"
+                    echo "Branch: ${{ github.ref }}"
+                    echo "Commit: ${{ github.sha }}"
