@@ -10,11 +10,11 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Say Hello on Push
-                run: echo "Hello, World! Push event triggered."
-            
+              run: echo "Hello, World! Push event triggered."
+
             - name: Print Event Details for hello on push
-                run: |
-                    echo "All Configs: ${{ github }}"
-                    echo "Repository: ${{ github.repository }}"
-                    echo "Branch: ${{ github.ref }}"
-                    echo "Commit: ${{ github.sha }}"
+              run: |
+                echo "All Configs: ${{ github }}"
+                echo "Repository: ${{ github.repository }}"
+                echo "Branch: ${{ github.ref }}"
+                echo "Commit: ${{ github.sha }}"
