@@ -2,8 +2,8 @@ name: Hello on Push
 
 on:
     push:
-        branches: ["main"]
-            
+        branches: ["main"] # this works, but not the one below
+#            - main    Note: This way of branch config does not work
 
 jobs:
     hello:
