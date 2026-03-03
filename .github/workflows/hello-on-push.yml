@@ -9,10 +9,10 @@ jobs:
     hello:
         runs-on: ubuntu-latest
         steps:
-            - name: Say Hello
+            - name: Say Hello on Push
                 run: echo "Hello, World! Push event triggered."
             
-            - name: Print Event Details
+            - name: Print Event Details for hello on push
                 run: |
                     echo "All Configs: ${{ github }}"
                     echo "Repository: ${{ github.repository }}"
