@@ -9,6 +9,7 @@ on:
 
 jobs:
     hello:
+        if: false
         runs-on: ubuntu-latest
         steps:
             - name: Say Hello on Push
