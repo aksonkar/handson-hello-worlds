@@ -1,0 +1,28 @@
+name: Build And Test NodeJs Aplication
+on:
+  #push:
+  #  branches:
+  #    - main
+  pull_request:
+    types: [opened, synchronize, reopened]
+jobs:
+  test:
+    needs: build
+    name: Test Node JS Application
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install dependencies
+        run: npm install
+      - name: Run tests
+        run: npm test
+    
+  build:
+    name: Build Node JS Application
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install dependencies
+        run: npm install
+      - name: Build application
+        run: npm run build

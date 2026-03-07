@@ -1,0 +1,43 @@
+name: Build NodeJs Aplication
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    types: [opened, synchronize, reopened]
+jobs:
+  sonarqube:
+    if: false
+    needs: test
+    name: SonarQube for Node JS Application
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
+      - name: SonarQube Scan    
+        uses: SonarSource/sonarqube-scan-action@v6
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_SCANNER_SKIP_SONARCLOUD_ANALYSIS: disabled
+
+  test:
+    needs: build
+    name: Test Node JS Application
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install dependencies
+        run: npm install
+      - name: Run tests
+        run: npm test
+    
+  build:
+    name: Build Node JS Application
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install dependencies
+        run: npm install
+      - name: Build application
+        run: npm run build
