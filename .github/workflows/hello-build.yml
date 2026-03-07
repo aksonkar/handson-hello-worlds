@@ -7,7 +7,7 @@ on:
     types: [opened, synchronize, reopened]
 jobs:
   sonarqube:
-    needs: build
+    needs: test
     name: SonarQube
     runs-on: ubuntu-latest
     steps:
