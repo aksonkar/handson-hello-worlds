@@ -12,12 +12,12 @@ jobs:
     name: Test the Node JS Application
     runs-on: ubuntu-latest
     steps:
-      -name: Cloning repository
-      uses: actions/checkout@v6
+      - name: Cloning repository
+        uses: actions/checkout@v6
       - name: Setup Node js and install dependencies
-      uses: ./.github/actions/setupnode
-      with:
-        node-version: '2'
+        uses: ./.github/actions/setupnode
+        with:
+          node-version: '2'
       - name: Run tests
         run: npm test
      
