@@ -41,7 +41,7 @@ jobs:
             path: dist/
   
   deploy:
-    needs: build
+    needs: test
     name: Deploy Node JS Application
     runs-on: ubuntu-latest
     steps:      
