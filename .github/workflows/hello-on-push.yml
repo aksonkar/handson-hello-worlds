@@ -9,7 +9,6 @@ on:
 
 jobs:
     hello:
-        if: false
         runs-on: ubuntu-latest
         steps:
             - name: Say Hello on Push
@@ -17,7 +16,7 @@ jobs:
 
             - name: Print Event Details for hello on push
               run: |
-              #  echo "${{ toJson(github) }}"
+                # echo "${{ toJson(github) }}"
                 echo "All Configs: ${{ github }}"
                 echo "Repository: ${{ github.repository }}"
                 echo "Branch: ${{ github.ref }}"
