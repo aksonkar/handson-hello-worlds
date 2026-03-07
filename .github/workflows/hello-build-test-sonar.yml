@@ -1,4 +1,4 @@
-name: Build NodeJs Aplication
+name: Build Test Sonar For JS Application
 on:
   push:
     branches:
