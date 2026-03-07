@@ -8,7 +8,7 @@ on:
 jobs:
   sonarqube:
     needs: test
-    name: SonarQube
+    name: SonarQube for Node JS Application
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
