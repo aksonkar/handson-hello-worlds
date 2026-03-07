@@ -1,4 +1,4 @@
-name: Build And Dummy Deploy NodeJs Aplication
+name: Build Test Dummy Deploy NodeJs Aplication
 on:
   #push:
   #  branches:
@@ -9,10 +9,10 @@ on:
 jobs:
   test:
     needs: build
-    name: Test Node JS Application
+    name: Test the Node JS Application
     runs-on: ubuntu-latest
     steps:
-      -name: Cloning repository
+      - name: Cloning repository
         uses: actions/checkout@v6
       - name: Setup Node js and install dependencies
         uses: ./.github/actions/setupnode
