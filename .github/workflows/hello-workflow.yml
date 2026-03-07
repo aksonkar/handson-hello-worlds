@@ -34,3 +34,8 @@ jobs:
         run: |
           echo Add other actions to build, from CI Workflow
           echo test, and deploy your project. from CI Workflow
+          echo "${{ toJson(github) }}"
+          echo "All Configs: ${{ github }}"
+          echo "Repository: ${{ github.repository }}"
+          echo "Branch: ${{ github.ref }}"
+          echo "Commit: ${{ github.sha }}"
