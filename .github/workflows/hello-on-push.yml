@@ -14,6 +14,8 @@ jobs:
 
             - name: Print Event Details for hello on push
               run: |
+                - run: |
+                node -e "console.log(JSON.stringify(require('@actions/github').context, null,2))"
                 echo "All Configs: ${{ github }}"
                 echo "Repository: ${{ github.repository }}"
                 echo "Branch: ${{ github.ref }}"
