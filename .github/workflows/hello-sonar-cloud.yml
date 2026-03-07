@@ -17,3 +17,4 @@ jobs:
         uses: SonarSource/sonarqube-scan-action@v6
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_SCANNER_SKIP_SONARCLOUD_ANALYSIS: disabled
