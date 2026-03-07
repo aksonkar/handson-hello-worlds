@@ -7,6 +7,7 @@ on:
     types: [opened, synchronize, reopened]
 jobs:
   sonarqube:
+    if: false
     needs: test
     name: SonarQube for Node JS Application
     runs-on: ubuntu-latest

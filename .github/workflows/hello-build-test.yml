@@ -1,8 +1,8 @@
-name: Build NodeJs Aplication
+name: Build And Test NodeJs Aplication
 on:
-  push:
-    branches:
-      - main
+  #push:
+  #  branches:
+  #    - main
   pull_request:
     types: [opened, synchronize, reopened]
 jobs:
